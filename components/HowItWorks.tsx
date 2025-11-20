@@ -38,14 +38,14 @@ export default function HowItWorks() {
       <div className="relative w-full max-sw-[1280px] mx-auto px-4 sm:px-8 lg:px-20 py-8 md:py-16 lg:py-20">
 
 
-        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 my-8 md:my-12 lg:my-16">
+        <div className="flex flex-col items-center justify-center lg:flex-row gap-6 md:gap-8 my-8 md:my-12 lg:my-16">
 
           <div className="w-full lg:min-w-[363px]">
             <div
               className="bg-[#FD5A17] rounded-xl border-2 border-black/50 p-8 md:p-10 lg:p-9"
               style={{ boxShadow: '8px 8px 0 0 #000' }}
             >
-              <h2 style={{ fontFamily: 'var(--font-caveat)' }} className="font-bold text-[42px] sm:text-[50px] md:text-[58px] leading-[39.25px] text-black mb-10 md:mb-12">
+              <h2 style={{ fontFamily: 'var(--font-ghuthen)' }} className="font-bold text-[42px] sm:text-[50px] md:text-[58px] leading-[39.25px] text-black mb-10 md:mb-12">
                 How it works?
               </h2>
 
@@ -68,12 +68,12 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div className="w-full lg:flsex-1 relative">
+          <div className="w-full lg:flex-1 relative">
             <div
               className="bg-[#FD5A17] rounded-xl border-2 border-black/50 py-8 md:py-10 lg:py-14"
               style={{ boxShadow: '8px 8px 0 0 #000' }}
             >
-              <h2 style={{ fontFamily: 'var(--font-caveat)' }} className="px-8 md:px-10 lg:px-14 font-bold text-[42px] sm:text-[50px] md:text-[58px] leading-[39.25px] text-black mb-10 md:mb-12">
+              <h2 style={{ fontFamily: 'var(--font-ghuthen)' }} className="px-8 md:px-10 lg:px-14 font-bold text-[42px] sm:text-[50px] md:text-[58px] leading-[39.25px] text-black mb-10 md:mb-12">
                 What around the world?
               </h2>
 

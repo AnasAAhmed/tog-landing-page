@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import HowItWorks from "@/components/HowItWorks";
 import ReelSection from "@/components/ReelSection";
 import { Search } from "lucide-react";
 import Image from "next/image";
@@ -172,23 +173,11 @@ export default function Home() {
         </button>
       </section>
 
-      {/* Any Platform section
-      <section className="px-4 py-16 md:py-24">
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/3bf3bd9e5ed483440300a6b8aa0317083e53ff29?width=2560"
-          alt="Any Platform, Any Quality"
-          className="w-full max-w-7xl mx-auto"
-        />
-      </section> */}
+      {/* Any Platform section*/}
       <ReelSection />
+
       {/* How it works / Blogs section */}
-      {/* <section className="px-4 pb-16 md:pb-24">
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/48789abd1329682477ff6e7f69606fa7a7f4742f?width=2560"
-          alt="How it works and Blog section"
-          className="w-full max-w-7xl mx-auto"
-        />
-      </section> */}
+     <HowItWorks/>
 
       {/* Footer */}
       <Footer />

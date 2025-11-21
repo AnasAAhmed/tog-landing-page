@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Questrial } from "next/font/google";
+import { Poppins, Questrial } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 const questrial = Questrial({
   variable: "--font-questrial",
   subsets: ["latin"],
   weight: ['400']
+});
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ['400','600','700','800']
 });
 const adieu = localFont({
   variable: '--font-Adieu',
@@ -50,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable}  ${adieu.className} ${ghuthen.variable} ${questrial.variable} antialiased`}
+        className={` ${poppins.variable}  ${adieu.className} ${ghuthen.variable} ${questrial.variable} antialiased`}
       >
         <Header />
         {children}

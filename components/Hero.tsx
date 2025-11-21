@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Hero = () => {
     return (
-        <section className="relative bg-s[url('/images/hero.png')] bg-orange-600 pt-30 pb-24 md:pb-36 psx-4">
+        <section className="relative overflow-x-hidden bg-s[url('/images/hero.png')] bg-[#FD5A17] pt-30 pb-24 md:pb-36 psx-4">
             <div className="absolute top-10 md:top-24 left-0 md:left-16 w-20 md:w-28 h-20 md:h-28 opacity-90">
                 <Image
                     src="/icons/tiktok.png"
@@ -40,7 +40,7 @@ const Hero = () => {
                     className="object-contain "
                 />
             </div>
-            <div className="hidden sm:block absolute w-32 md:w-d60 h-48 md:h-72 top-12 md:top-24 right-0 opacity-90">
+            <div className="hidden lg:block absolute w-48 lg:w-100 h-48 lg:h-100 top-12 md:top-24 -right-24 opacity-90">
 
                 <Image
                     src="/icons/d-arrow2.png"
@@ -49,7 +49,7 @@ const Hero = () => {
                     className="object-contain "
                 />
             </div>
-            <div className="hidden sm:block absolute w-32 md:w-60 h-48 md:h-60  top-36 md:top-48 left-4 md:right-24 opacity-90">
+            <div className="hidden lg:block absolute w-32 md:w-60 h-48 md:h-60  top-36 md:top-48 left-4 md:right-24 opacity-90">
                 <Image
                     src="/icons/d-arrow3.png"
                     alt="d-arroe"
@@ -84,7 +84,7 @@ const Hero = () => {
                     Zero Trouble.
                 </h1>
 
-                <p className="font-body text-base md:text-lg text-black leading-relaxed mb-8 md:mb-12 max-w-3xl mx-auto">
+                <p style={{fontFamily:'var(--font-questrial)'}}  className="font-body text-base md:text-lg text-black leading-relaxed mb-8 md:mb-12 max-ws-3xl mx-auto">
                     Download videos from YouTube, Instagram, TikTok, Facebook and more
                     — fast, clean, and always in HD
                 </p>

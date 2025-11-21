@@ -35,12 +35,12 @@ export default function HowItWorks() {
     bg-size-[1200px_auto]         
     sm:bg-size-[1200px_auto]    
     lg:bg-size-[1400px_auto]">
-      <div className="relative w-full px-4 sm:px-8 lg:px-20 py-8 md:py-16 lg:py-20">
+      <div className="relative w-full h-full px-4 sm:px-8 lg:px-20 py-8 md:py-16 lg:py-20">
 
 
-        <div className="flex flex-col lg:flex-row justify-center gap-6 md:gap-8 my-8 md:my-12 lg:my-16">
+        <div className="flex flex-col h-full lg:flex-row justify-center items-stretch gap-6 md:gap-8 my-8 md:my-12 lg:my-16">
 
-          <div className="w-full lg:min-w-[303px]">
+          <div className="w-full max-h-full  min-w-[303px]">
             <div
               className="bg-[#FD5A17] rounded-xl border-2 border-black/50 py-8 md:py-10 lg:py-13 px-8 md:px-7 xl:px-13"
               style={{ boxShadow: '8px 8px 0 0 #000' }}
@@ -68,7 +68,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div id="blogs" className="w-full lg:flex-1 lg:max-w-160 xl:max-w-none relative">
+          <div id="blogs" className="w-full max-h-full lg:flex-1 lg:max-w-160 xl:min-w-250  relative">
             <div
               className="bg-[#FD5A17] rounded-xl border-2 border-black/50 pb-3 md:pb-6 lg:pb-8 pt-8 md:pt-12 lg:pt-14"
               style={{ boxShadow: '8px 8px 0 0 #000' }}

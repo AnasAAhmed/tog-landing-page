@@ -9,16 +9,15 @@ export default function Header() {
       <div className="mx-auto max-w-7xl">
         <div className="rounded-2xl bg-[rgba(255,88,1,0.04)] backdrop-blur-sm">
           <div className="flex items-center justify-between px-6 md:px-20 py-4">
-            {/* Logo */}
+
             <div className="shrink-0">
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/4c2d0856bbd3c15ad06ffb4717d7124dd9d662c7?width=107"
+                src="/icons/logo.png"
                 alt="Genius"
                 className="h-16 md:h-[70px] w-auto"
               />
             </div>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8 lg:gap-12">
               <a
                 href="#how-it-works"
@@ -40,13 +39,14 @@ export default function Header() {
               </a>
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
-              <button className="rounded-lg bg-black px-5 py-2.5 font-body text-sm md:text-[15px] font-normal text-white tracking-wide hover:bg-gray-900 transition-colors">
+         <div className="hidden md:block">
+              {/* <button className="rounded-lg btn-japanese px-5 py-2.5 font-body text-sm md:text-[15px] font-normal text-white tracking-wide hovder:bd-gray-900 transition-colors">
                 Get Started
-              </button>
-            </div>
-
+              </button> */}
+            <button className="hidden md:block px-5 py-2.5 text-sm md:text-[15px] font-normal tracking-wide btn-animated">
+              <span className="btn-text">Get Started</span>
+            </button>
+            </div> 
             {/* Mobile Hamburger */}
             <div className="md:hidden">
               <button

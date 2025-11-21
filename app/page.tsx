@@ -22,6 +22,7 @@ export default function Home() {
             className="h-10"
           />
         </button>
+        
       </section>
 
       {/* Any Platform section*/}

@@ -8,6 +8,46 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+}
+@layer utilities {
+  .btn-animated {
+    @apply relative flex justify-center items-center rounded-md 
+           bg-[#000000] shadow-[0px_6px_24px_rgba(0,0,0,0.2)]
+           overflow-hidden cursor-pointer border-none;
+  }
+
+  .btn-animated::after {
+    content: "";
+    @apply absolute h-full w-0 bg-[#ffffff] right-0 transition-all duration-400 ease-in-out;
+  }
+
+  .btn-animated:hover::after {
+    @apply left-0 w-full;
+    right: auto;
+  }
+
+  .btn-text {
+    @apply text-white text-center w-full 
+           z-20 transition-all duration-300 ease-in-out;
+  }
+
+  .btn-animated:hover .btn-text {
+    @apply text-[#183153];
+    animation: scaleUp 0.3s ease-in-out;
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -119,4 +159,47 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+
+/* in your globals.css or Tailwind config */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.btn-japanese {
+  background-color: var(--foreground);
+  color: white;
+  border: none;
+  /* border-radius: 0.25rem; */
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn-japanese:hover {
+  background-color: var(--accent-foreground);
+}
+
+.btn-japanese:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(185, 185, 185, 0.363);
+  transition: width 0.3s ease;
+}
+
+.btn-japanese:hover:before {
+  width: 100%;
 }

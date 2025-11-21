@@ -28,6 +28,7 @@ const ghuthen = localFont({
 export const metadata: Metadata = {
   title: "Genius Downloader",
   description: "One Tool. Every Video.Zero Trouble. Download videos from YouTube, Instagram, TikTok, Facebook and more — fast, clean, and always in HD.",
+  icons:{icon:'/icons/logo.png'},
   openGraph: {
     title: "Genius Downloader",
     description: "One Tool. Every Video.Zero Trouble. Download videos from YouTube, Instagram, TikTok, Facebook and more — fast, clean, and always in HD.",

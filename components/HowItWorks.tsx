@@ -42,7 +42,7 @@ export default function HowItWorks() {
 
           <div className="w-full max-h-full  min-w-[303px]">
             <div
-              className="bg-[#FD5A17] rounded-xl border-2 border-black/50 py-8 md:py-10 lg:py-13 px-8 md:px-7 xl:px-13"
+              className="bg-[#FD5A17] rounded-xl border-2 border-black/50 py-8 md:py-10 lg:py-13 px-8 md:px-5"
               style={{ boxShadow: '8px 8px 0 0 #000' }}
             >
               <h2 style={{ fontFamily: 'var(--font-ghuthen)' }} className="font-bold text-[42px] sm:text-[50px] md:text-[58px] leading-[39.25px] text-black mb-10 md:mb-12">
@@ -68,7 +68,7 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          <div id="blogs" className="w-full max-h-full lg:flex-1 lg:max-w-160 xl:min-w-250  relative">
+          <div id="blogs" className="w-full max-h-full lg:flex-1 lg:max-w-130 xl:min-w-250  relative">
             <div
               className="bg-[#FD5A17] rounded-xl border-2 border-black/50 pb-3 md:pb-6 lg:pb-8 pt-8 md:pt-12 lg:pt-14"
               style={{ boxShadow: '8px 8px 0 0 #000' }}

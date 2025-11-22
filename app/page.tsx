@@ -5,7 +5,7 @@ import ReelSection from "@/components/ReelSection";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="scroll-smooth">
       
       {/* Hero Section */}
      <Hero/>

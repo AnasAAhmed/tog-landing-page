@@ -1,15 +1,13 @@
 'use client'
 
 
+import { blogs } from "@/lib/constants";
+import Link from "next/link";
 import { useRef } from "react";
 
 export default function HowItWorks() {
 
-  const blogs = [
-    { title: 'How to start blogging? Most efficient way to get reach.', image: '/images/blog1.png' },
-    { title: '10 Reasons not to use groww for invetments.', image: '/images/blog2.png' },
-    { title: 'A blog (contraction of weblog) is a web site with frequent', image: '/images/blog3.png' },
-  ]
+  
 
   const steps = [
     'Copy the URL of the video whichever you like.',
@@ -73,8 +71,8 @@ export default function HowItWorks() {
                 <div ref={scrollRef}
                   className="flex gap-4 max-sm:ml-8 justify-around items-stretch md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
 
-                  {[...blogs,...blogs].map((i, _) => (
-                    <div key={_} className="min-w-52 sm:min-w-[278px] snap-start">
+                  {[...blogs, ...blogs].map((i, _) => (
+                    <Link href={`/blogs/${i.slug}`} key={_} className="min-w-52 sm:min-w-[278px] snap-start">
                       <div className="bg-black rounded-lg border border-black overflow-hidden h-full flex flex-col">
 
                         <div className="bg-[#FFC803] p-4 sm:p-9 border-b border-white">
@@ -94,7 +92,7 @@ export default function HowItWorks() {
                         </div>
 
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
 

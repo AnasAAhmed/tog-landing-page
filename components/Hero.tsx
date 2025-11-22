@@ -1,10 +1,12 @@
 import { Search } from 'lucide-react'
 import Image from 'next/image'
 import SplitText from './ui/split-effect'
+import { BackgroundCircles } from './ui/Parallax'
 
 const Hero = () => {
     return (
         <section className="relative overflow-hidden bg-s[url('/images/hero.png')] bg-[#FD5A17] pt-30 pb-24 md:pb-36 psx-4">
+            {/* <BackgroundCircles/> */}
             <div style={{ animationDuration: `${3 + 2 * 0.3}s` }} className="absolute animate-float top-10 md:top-18 left-0 md:left-16 w-20 md:w-36 h-20 md:h-36 opacity-90">
                 <Image
                     src="/icons/tiktok.png"
@@ -121,7 +123,7 @@ const Hero = () => {
                         <input
                             type="text"
                             placeholder="Paste your link"
-                            className="w-full max-sm:text-[10px] rounded border-2 border-black outline-none bg-transparent px-4 md:px-6 py-3 md:py-5 text-base sm:text-lg md:text-xl text-black placeholder:text-black/60"
+                            className="w-full max-sm:text-[10px] rounded border-2 border-black bg-transparent px-4 md:px-6 py-3 md:py-5 text-base sm:text-lg md:text-xl text-black placeholder:text-black/60"
                         />
                         <button className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 rounded-md border border-black bg-transparent p-2 hover:bg-black/5 transition-colors">
                             <Search className="w-4 h-4 md:w-6 md:h-6 text-black" />

@@ -20,24 +20,24 @@ export default function Header() {
             </Link>
 
             <nav className="hidden md:flex items-center gap-8 lg:gap-12">
-              <a
-                href="#how-it-works"
+              <Link
+                href="/#how-it-works"
                 className="font-sans text-sm font-normal text-black tracking-wide hover:opacity-70 transition-opacity"
               >
                 How it works
-              </a>
-              <a
-                href="#blogs"
+              </Link>
+              <Link
+                href="/#blogs"
                 className="font-sans text-sm font-normal text-black tracking-wide hover:opacity-70 transition-opacity"
               >
                 Blogs
-              </a>
-              <a
-                href="#faqs"
+              </Link>
+              <Link
+                href="/#faqs"
                 className="font-sans text-sm font-normal text-black tracking-wide hover:opacity-70 transition-opacity"
               >
                 FAQs
-              </a>
+              </Link>
             </nav>
 
          <div className="hidden md:block">

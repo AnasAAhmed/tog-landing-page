@@ -3,18 +3,20 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 ;
-  };
+    @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground
-  
+
+  ;
 }
+
+body {
+  @apply bg-background text-foreground;
+
+}
+
 @layer utilities {
   .btn-animated {
-    @apply relative flex justify-center items-center rounded-md 
-           bg-[#000000] shadow-[0px_6px_24px_rgba(0,0,0,0.2)]
-           overflow-hidden cursor-pointer border-none;
+    @apply relative flex justify-center items-center rounded-md bg-[#000000] overflow-hidden cursor-pointer border-none;
   }
 
   .btn-animated::after {
@@ -28,13 +30,13 @@
   }
 
   .btn-text {
-    @apply text-white text-center w-full 
-           z-20 transition-all duration-300 ease-in-out;
+    @apply text-white text-center w-full z-20 transition-all duration-300 ease-in-out;
   }
 
   .btn-animated:hover .btn-text {
     @apply text-black;
   }
+
   .btn-animated:active {
     animation: scaleUp 0.3s ease-in-out;
   }
@@ -43,9 +45,11 @@
     0% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(0.95);
     }
+
     100% {
       transform: scale(1);
     }
@@ -127,6 +131,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  scroll-behavior: smooth;
 }
 
 .dark {
@@ -164,10 +169,17 @@
 }
 
 
-/* in your globals.css or Tailwind config */
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-9px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
 .animate-float {
@@ -261,20 +273,21 @@
   animation-duration: 0.3s;
   animation-delay: 0.7s;
 }
+
 @keyframes appear {
-  from{
+  from {
     opacity: 0;
     scale: 0.5;
   }
 
- to {
+  to {
     opacity: 1;
     scale: 1;
   }
 }
 
 .cardr {
-  animation:appear linear;
+  animation: appear linear;
   /* animation-timeline: view();
   animation-range: entry, 0; */
 }
@@ -295,4 +308,13 @@
   .responsive-filter {
     filter: blur(0px);
   }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -69,36 +69,6 @@ export default function NotFound() {
           >
             Quick Links
           </h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <button
-              onClick={() => router.push('/')}
-              className="bg-[#FD5A17] border-2 border-white rounded-lg px-6 py-3 text-white font-semibold text-lg hover:-translate-y-1 transition-transform"
-            >
-              🏠 Home
-            </button>
-            
-            <button
-              onClick={() => router.push('/blogs')}
-              className="bg-[#FD5A17] border-2 border-white rounded-lg px-6 py-3 text-white font-semibold text-lg hover:-translate-y-1 transition-transform"
-            >
-              📝 Blogs
-            </button>
-            
-            <button
-              onClick={() => router.push('/about')}
-              className="bg-[#FD5A17] border-2 border-white rounded-lg px-6 py-3 text-white font-semibold text-lg hover:-translate-y-1 transition-transform"
-            >
-              👤 About
-            </button>
-            
-            <button
-              onClick={() => router.push('/contact')}
-              className="bg-[#FD5A17] border-2 border-white rounded-lg px-6 py-3 text-white font-semibold text-lg hover:-translate-y-1 transition-transform"
-            >
-              📧 Contact
-            </button>
-          </div>
         </div>
 
       </div>

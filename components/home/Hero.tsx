@@ -1,8 +1,5 @@
 import { Search } from 'lucide-react'
-import Image from 'next/image'
-import SplitText from '../ui/split-effect'
 import { BackgroundCircles } from '../ui/Parallax'
-import { SplitText2 } from '../ui/split-effect-ssr'
 
 const Hero = () => {
     return (

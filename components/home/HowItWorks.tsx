@@ -2,12 +2,12 @@
 
 
 import { blogs } from "@/lib/constants";
-import { useRef } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import { BlogCard } from "../home/BlogCard";
 
 export default function HowItWorks() {
 
-  
+
 
   const steps = [
     'Copy the URL of the video whichever you like.',
@@ -25,8 +25,67 @@ export default function HowItWorks() {
       });
     }
   };
+  const sectionRef = useRef<any>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate scroll progress when section is in view
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+          setScrollPosition(progress * 100);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+
   return (
-    <div id="how-it-works" className="min-h-screen bg-[url('/images/how-it-works.png')] bg-no-repeat bg-contain bg-left bg-[#FFC803] overflow-x-hidden">
+    <div
+      ref={sectionRef}
+      id="how-it-works"
+      className="min-h-screen bg-[#FFC803] overflow-hidden relative"
+    >
+      {/* scrolling text */}
+      <div className="absolute -top-10 sm:-top-16 left-0 right-0 pointer-events-none overflow-hidden h-3s2">
+        <div
+          className="text-[150px] md:text-[220px] font-bold whitespace-nowrap"
+          style={{
+            fontFamily: 'var(--font-adieu)',
+            transform: `translateX(${100 - scrollPosition * 2}%)`,
+            transition: 'transform 0.1s linear',
+            WebkitTextStroke: '1px #FD5A17',
+            color: 'transparent',
+          }}
+        >
+          GENIUS
+        </div>
+      </div>
+      <div className="absolute bottom-1/2 sm:bottom-0 left-0 right-0 pointer-events-none overflow-hidden hs-32">
+        <div
+          className="text-[100px] md:text-[150px] font-bold whitespace-nowrap"
+          style={{
+            fontFamily: 'var(--font-adieu)',
+            transform: `translateX(${-85 + scrollPosition * 2}%)`,
+            transition: 'transform 0.1s linear',
+            WebkitTextStroke: '1px #FD5A17',
+            color: 'transparent',
+          }}
+        >
+          DOWNLOADER
+        </div>
+      </div>
+
       <div className="relative w-full h-full px-4 sm:px-8 lg:px-20 py-8 md:py-16 lg:py-20">
 
         <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6 md:gap-8 my-8 md:my-12 lg:my-16">
@@ -72,11 +131,11 @@ export default function HowItWorks() {
                   className="flex gap-4 max-sm:ml-8 justify-around items-stretch md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
 
                   {[...blogs, ...blogs].map((i, _) => (
-                   <BlogCard key={_} blog={i} index={_}/>
+                    <BlogCard key={_} blog={i} index={_} />
                   ))}
                 </div>
 
-                <button
+               {blogs.length>3&& <button
                   onClick={() => scroll('right')}
                   className="absolute cursor-pointer -bottom-18 lg:bottom-1/2 right-1/3 lg:-right-10 w-20 h-20 md:w-[100px] md:h-[100px] rounded-full bg-[#FD5A17] border-2 border-black flex items-center justify-center hover:scale-105 transition-transform"
                   aria-label="Next articles"
@@ -84,7 +143,7 @@ export default function HowItWorks() {
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 30H45M45 30L32.5 17.5M45 30L32.5 42.5" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </button>
+                </button>}
               </div>
             </div>
           </div>

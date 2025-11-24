@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="bg-[#FD5A17] px-4 py-2 md:px-16">
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-2xl bg-[rgba(255,88,1,0.04)] backdrop-blur-sm">
+        <div className="rounded-2xl">
           <div className="flex items-center justify-between px-6 md:px-20 py-4">
 
             <Link href={'/'} className="shrink-0">

@@ -1,19 +1,14 @@
 'use client'
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { MouseParallax } from "react-just-parallax";
+// import { MouseParallax } from "react-just-parallax";
 
 export const BackgroundCircles = () => {
     const [mounted, setMounted] = useState(false);
     const [enableParallax, setEnableParallax] = useState(true);
 
     useEffect(() => {
-        // if (window.innerWidth < 1024) {
-        //     setMounted(true);
-        //     // setEnableParallax(false);
-        // } else {
             setMounted(true);
-        // }
     }, []);
     return enableParallax && (
 
@@ -36,9 +31,10 @@ export const BackgroundCircles = () => {
                 className={`absolute animate-float top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 h-24 md:h-32  transition-all duration-300 ease-out delay-200 ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                     }`}
             >
-                <img
+                <Image
                     src={'https://e1s0bwzoxc.ufs.sh/f/EHhleKT2TuF3ZwzTIDX1TPF5oBNUansJw6khKE2xldzRYAvQ'}
                     alt="insta"
+                    fill
                     className="w-full h-full object-contain -rotate-14"
                 />
             </div>

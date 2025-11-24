@@ -1,11 +1,64 @@
+'use client'
 import Image from "next/image";
 import MotionDiv from "../ui/MotionWrapper";
 import SplitText from "../ui/split-effect";
+import { useEffect, useRef, useState } from "react";
 
 const ReelSection = () => {
+  const sectionRef = useRef<any>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate scroll progress when section is in view
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+          setScrollPosition(progress * 100);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
-    <div className="min-h-screen bdg-[url('/images/reel-section.png')] madx-sm:bg-[url('/images/reel-section-mob.png')] max-sm: bg-bottom bg-no-repeat bg-contain bg-[#FD5A17] relative overflow-hidden">
-    
+    <div ref={sectionRef} className="min-h-screen bg-[#FD5A17] max-sm:bg-[url('/images/reel-section-mob.png')] max-sm: bg-center bg-no-repeat bg-contain relative overflow-hidden">
+      <div className="max-sm:hidden absolute top-56 left-0 right-0 pointer-events-none overflow-hidden h-3s2">
+        <div
+          className="text-[150px] md:text-[220px] font-bold whitespace-nowrap"
+          style={{
+            fontFamily: 'var(--font-adieu)',
+            transform: `translateY(${100- scrollPosition * 2}%)`,
+            transition: 'transform 0.1s linear',
+            WebkitTextStroke: '1px black',
+            color: 'transparent',
+          }}
+        >
+          GENIUS
+        </div>
+      </div>
+      <div className="max-sm:hidden absolute bottom-56 left-24 right-0 pointer-events-none overflow-hidden hs-32">
+        <div
+          className="text-[100px] md:text-[150px] font-bold whitespace-nowrap"
+          style={{
+            fontFamily: 'var(--font-adieu)',
+            transform: `translateY(${120 - scrollPosition * 2}%)`,
+            transition: 'transform 0.1s linear',
+            WebkitTextStroke: '1px black',
+            color: 'transparent',
+          }}
+        >
+          DOWNLOADER
+        </div>
+      </div>
       <div className="container mx-auto px-4 py-11 lg:py-16 relative z-10">
         <div className="flex flex-col items-center gap-3 mb-8 lg:mb-12">
 

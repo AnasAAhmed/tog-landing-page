@@ -2,7 +2,7 @@
 
 
 import { blogs } from "@/lib/constants";
-import { RefObject, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import { BlogCard } from "../home/BlogCard";
 
 export default function HowItWorks() {
@@ -135,7 +135,7 @@ export default function HowItWorks() {
                   ))}
                 </div>
 
-               {blogs.length>3&& <button
+               {<button
                   onClick={() => scroll('right')}
                   className="absolute cursor-pointer -bottom-18 lg:bottom-1/2 right-1/3 lg:-right-10 w-20 h-20 md:w-[100px] md:h-[100px] rounded-full bg-[#FD5A17] border-2 border-black flex items-center justify-center hover:scale-105 transition-transform"
                   aria-label="Next articles"

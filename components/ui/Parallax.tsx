@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 
 export const BackgroundCircles = () => {
     const [mounted, setMounted] = useState(false);
-    const [enableParallax, setEnableParallax] = useState(true);
+    // const [enableParallax, setEnableParallax] = useState(true);
 
     useEffect(() => {
-            setMounted(true);
+        setMounted(true);
     }, []);
-    return enableParallax && (
+    return (
 
         <>
             <div

@@ -70,6 +70,7 @@ const Hero = () => {
             })
             const data = await res.json();
             setMediaUrl(data.media_url);
+            downloadFile(data.media_url)
         } catch (error) {
             console.log(error)
         }
@@ -141,7 +142,7 @@ const Hero = () => {
                         type='button'
                         disabled={downloadLoading}
                         className="hidden md:flex justify-center items-center btn-animated min-w-[120px] sm:min-w-[150px] md:min-w-[180px] rounded py-3.5 sm:py-[22px] font-body text-base text-[10px]  gap-1 sm:text-lg md:text-xl">
-                        <span className="btn-text mx-2 flex items-center justify-center gap-1">Download {downloadLoading?<Loader className='animate-spin'/>:''}</span>
+                        <span className="btn-text mx-2 flex items-center justify-center gap-1">Download {downloadLoading ? <Loader className='animate-spin' /> : ''}</span>
                     </button>
                     <div onSubmit={handleSubmit} className="relative flex-1 w-auto">
                         <input
@@ -158,6 +159,12 @@ const Hero = () => {
                         </button>
                     </div>
                 </form>
+                {mediaUrl && <div className='flex flex-col items-center justify-center'>
+                    <p className='text-white'>{mediaUrl}</p>
+                    <button onClick={() => downloadFile(mediaUrl)} className='bg-black text-white px-4 py-2 rounded-md'>Download</button>
+                    <a href={mediaUrl} download className='bg-black text-white px-4 py-2 rounded-md' target='_blank' rel='noopener noreferrer'>Download Link</a>
+                </div>
+                }
                 {errorMessage && <p className='text-white'>{errorMessage}</p>}
 
             </div>

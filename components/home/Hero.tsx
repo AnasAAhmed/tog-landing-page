@@ -134,14 +134,14 @@ const Hero = () => {
                 <p style={{ fontFamily: 'var(--font-questrial)' }} className="font-body text-base md:text-lg p-fade text-black leading-relaxed mb-8 md:mb-12 max-ws-3xl mx-2">
                     Download videos from YouTube, Instagram, TikTok, Facebook and more — fast, clean, and always in HD
                 </p>
-                <form onSubmit={handleSubmit} className="flex btns-fade flex-row items-center justify-center gap-3 md:gap-5 max-w-2xl max-sm:px-2 mx-auto">
+                <form onSubmit={handleSubmit} className="flex btns-fade flex-row items-center justify-center gap-3 md:gap-5 max-w-3xl w-full max-sm:px-2 mx-auto">
 
                     <button
                         onClick={() => downloadFile(mediaUrl)}
                         type='button'
                         disabled={downloadLoading}
-                        className="hidden md:block btn-animated min-w-[120px] sm:min-w-[150px] md:min-w-[180px] rounded py-3.5 sm:py-[22px] font-body text-base text-[10px]  gap-1 sm:text-lg md:text-xl">
-                        <span className="btn-text mx-2 flex items-center gap-1">Download {downloadLoading?<Loader className='animate-spin'/>:''}</span>
+                        className="hidden md:flex justify-center items-center btn-animated min-w-[120px] sm:min-w-[150px] md:min-w-[180px] rounded py-3.5 sm:py-[22px] font-body text-base text-[10px]  gap-1 sm:text-lg md:text-xl">
+                        <span className="btn-text mx-2 flex items-center justify-center gap-1">Download {downloadLoading?<Loader className='animate-spin'/>:''}</span>
                     </button>
                     <div onSubmit={handleSubmit} className="relative flex-1 w-auto">
                         <input

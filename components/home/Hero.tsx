@@ -62,8 +62,8 @@ const Hero = () => {
                 method: "POST",
                 body: JSON.stringify({ media_url: parsedUrl.data.url }),
                 headers: {
-                    'Authorization': 'Bearer N15lUIoNycOeUt3B1Y1mVh_cb7fdy4S0',
-                    'x-api-key': 'b6ac4f750048007378a2f8d0f3bb0c63',
+                    // 'Authorization': 'Bearer N15lUIoNycOeUt3B1Y1mVh_cb7fdy4S0',
+                    // 'x-api-key': 'b6ac4f750048007378a2f8d0f3bb0c63',
                     'Content-Type': 'application/json'
                 },
 

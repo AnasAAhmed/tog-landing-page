@@ -75,16 +75,23 @@ const Hero = () => {
 
             })
             const data = await res.json();
+            if(!res.ok){
+            setErrorMessage(data?.error||res.statusText)
+            }
             setMediaUrl(data.media_url);
             downloadFile(data.media_url)
         } catch (error) {
             console.log(error)
+            setErrorMessage((error as Error).message)
         }
         finally {
             setDownloadLoading(false)
         }
     }
     async function downloadFile(url: string) {
+         if (!urlInput) {
+            return
+        };
         try {
             const res = await fetch(url);
             const blob = await res.blob();

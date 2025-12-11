@@ -75,8 +75,8 @@ const Hero = () => {
 
             })
             const data = await res.json();
-            if(!res.ok){
-            setErrorMessage(data?.error||res.statusText)
+            if (!res.ok) {
+                setErrorMessage(data?.error || res.statusText)
             }
             setMediaUrl(data.media_url);
             downloadFile(data.media_url)
@@ -89,7 +89,7 @@ const Hero = () => {
         }
     }
     async function downloadFile(url: string) {
-         if (!urlInput) {
+        if (!urlInput) {
             return
         };
         try {
@@ -160,17 +160,56 @@ const Hero = () => {
                                 setErrorMessage('')
                             }}
                         />
-                        <button type='submit' title='confirm search' className="absolute cursor-pointer right-1 sm:right-3 top-1/2 -translate-y-1/2 rounded-md border border-black bg-transparent p-2 hover:bg-black/5 transition-colors">
-                            <Search className="w-4 h-4 md:w-6 md:h-6 text-black" />
-                        </button>
                     </div>
                 </form>
-                {mediaUrl && <div className='flex flex-col gap-3 items-center justify-center'>
-                    <p className='text-white'>{mediaUrl}</p>
-                    <button onClick={() => downloadFile(mediaUrl)} className='bg-black text-white px-4 py-2 rounded-md'>Download</button>
-                    <a href={mediaUrl} download className='bg-black text-white px-4 py-2 rounded-md' target='_blank' rel='noopener noreferrer'>Download Link</a>
-                </div>
-                }
+                {mediaUrl && (
+                    <div className="flex my-5 flexs-col items-center justify-center gap-5 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl w-full max-w-xl mx-auto">
+
+                        <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
+                            <video
+                                src={mediaUrl}
+                                controls
+                                className="w-full h-auto rounded-xl"
+                            // poster="/images/video-placeholder.png"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div className="bg-black/40 p-4 rounded-full backdrop-blur-sm transition-opacity group-hover:opacity-0">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-10 w-10 text-white"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                    >
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="flex flex-col gap-4">
+                                <button
+                                    onClick={() => downloadFile(mediaUrl)}
+                                    className="px-5 py-2 rounded-lg bg-white text-black font-semibold shadow-md hover:bg-gray-200 transition"
+                                >
+                                    Download
+                                </button>
+
+                                <a
+                                    href={mediaUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-5 py-2 rounded-lg bg-black text-white font-semibold shadow-md hover:bg-black transition"
+                                >
+                                    Open in New Tab
+                                </a>
+                            </div>
+                            <p className="text-white/80 my-2 text-sm text-center break-all max-w-full">
+                                {mediaUrl}
+                            </p>
+                        </div>
+                    </div>
+                )}
+
                 {errorMessage && <p className='text-white'>{errorMessage}</p>}
 
             </div>

@@ -1,7 +1,7 @@
 'use client'
 import { Loader, Search } from 'lucide-react'
 import { BackgroundCircles } from '../ui/Parallax'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import z from 'zod';
 
 export const mediaUrlSchema = z.object({
@@ -44,6 +44,13 @@ const Hero = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [downloadLoading, setDownloadLoading] = useState(false);
     const [mediaUrl, setMediaUrl] = useState('');
+    const videoRef = useRef<HTMLDivElement | null>(null);
+    
+    useEffect(() => {
+        if (mediaUrl && videoRef.current) {
+            videoRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    }, [mediaUrl])
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -79,7 +86,7 @@ const Hero = () => {
                 setErrorMessage(data?.error || res.statusText)
             }
             setMediaUrl(data.media_url);
-            downloadFile(data.media_url)
+            // downloadFile(data.media_url)
         } catch (error) {
             console.log(error)
             setErrorMessage((error as Error).message)
@@ -163,7 +170,7 @@ const Hero = () => {
                     </div>
                 </form>
                 {mediaUrl && (
-                    <div className="flex my-5 flexs-col items-center justify-center gap-5 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl w-full max-w-xl mx-auto">
+                    <div  ref={videoRef} id='video-preview' className="flex my-5 flexs-col items-center justify-center gap-5 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl w-full max-w-xl mx-auto">
 
                         <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
                             <video

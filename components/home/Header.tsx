@@ -6,7 +6,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-[#FD5A17] px-4 py-2 md:px-16">
+    <header className="bg-[#FD5A17] px-4 md:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="rounded-2xl">
           <div className="flex items-center justify-between px-6 md:px-20 py-4">

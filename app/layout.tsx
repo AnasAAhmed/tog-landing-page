@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/home/Header";
 import Footer from "@/components/home/Footer";
+import { Toaster } from "sonner";
 
 
 const questrial = Questrial({
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+         <Toaster />
       </body>
     </html>
   );
